@@ -1,4 +1,6 @@
-package ru.kolesnikov.kotlinpractise
+package ru.kolesnikov.kotlinpractise.repository
 
-interface CountryRepository {
-}
+import org.springframework.data.jpa.repository.JpaRepository
+import ru.kolesnikov.kotlinpractise.entity.CountryEntity
+
+interface CountryRepository : JpaRepository<CountryEntity, Long>

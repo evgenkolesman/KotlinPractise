@@ -1,13 +1,7 @@
 package ru.kolesnikov.kotlinpractise.controller
 
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
-
-//@Entity
-//@Table(name =" country")
-data class Country {
-
-//    @Id
-    public Long id;
-}
+data class CountryDTO (
+    val id: Long = 0,
+    val countryName: String = "",
+    val population: Long = 0
+)

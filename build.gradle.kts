@@ -18,7 +18,10 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -31,4 +34,12 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs = listOf("-Xjsr305=strict")
+        jvmTarget = "17"
+    }
 }
